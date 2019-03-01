@@ -2,10 +2,48 @@
 <head>
     <title>$i18n.getText("report-plugin.admin.planning.page.title")</title>
     <meta name="decorator" content="atl.admin">
+    $webResourceManager.requireResource("com.atlassian.plugins.report-jira-plugin:report-jira-plugin-resources")
 </head>
 <body>
-<h1>$i18n.getText("report-plugin.admin.planning.page.headline")</h1>
+    <h1>$i18n.getText("report-plugin.admin.planning.page.headline")</h1>
 
-<p>Now it looks nice :)</p>
+
+    <form name="myform" id="myform">
+        <div>
+            <label>Оклад:</label>
+            <input type="number" name="salary">
+            <label>Закрытые часы fix:</label>
+            <input type="number" name="closedClockFix">
+            <label>Переходящие часы:</label>
+            <input type="number" name="rollingHours">
+        </div>
+        <input type="button" onclick="testPost(this.form)" value="Create Report"/>
+    </form>
+
+    <table>
+        <thead>
+        <th>Оклад</th>
+        <th>ЗакрЧасыФикс</th>
+        <th>Переходящие</th>
+        <th>Норма</th>
+        <th>Премия</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="salary"></td>
+                <td id="closedClockFix"></td>
+                <td id="rollingHours"></td>
+                <td id="norma"></td>
+                <td id="primary"></td>
+            </tr>
+        </tbody>
+    </table>
+
+
+##    <table id="event-rt"></table>
+
+
+
+
 </body>
 </html>

@@ -1,5 +1,22 @@
-.idea/
-*.iml
-*.log
+private/
+build/
+dist/
 target/
-LICENSE
+.idea
+*/cdserver.tests/in/
+*/cdserver.tests/config/tmp/
+*/cdserver.tests/tmp/
+server.log
+*.iml
+nbactions.xml
+# exclude eclipse
+.settings/
+.project
+.classpath
+#
+*.bat
+*.docx
+*.vsd
+*.vsdx
+version.properties
+

@@ -1,5 +1,6 @@
 package it.com.atlassian.plugins.report.rest;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.After;
 import org.junit.Before;
@@ -10,7 +11,7 @@ import com.atlassian.plugins.report.rest.ReportCreateResource;
 import com.atlassian.plugins.report.rest.ReportCreateResourceModel;
 import org.apache.wink.client.Resource;
 import org.apache.wink.client.RestClient;
-
+@Ignore
 public class ReportCreateResourceFuncTest {
 
     @Before
@@ -23,6 +24,7 @@ public class ReportCreateResourceFuncTest {
 
     }
 
+    @Ignore
     @Test
     public void messageIsValid() {
 

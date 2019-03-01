@@ -7,17 +7,23 @@
     <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
     <param name="plugin-icon">images/pluginIcon.png</param>  
     <param name="plugin-logo">images/pluginLogo.png</param> 
-  </plugin-info>  
+  </plugin-info>
+
   <!-- add our i18n resource -->  
-  <resource type="i18n" name="i18n" location="report-jira-plugin"/>  
+  <resource type="i18n" name="i18n" location="report-jira-plugin"/>
+
   <!-- add our web resources -->  
   <web-resource key="report-jira-plugin-resources" name="report-jira-plugin Web Resources"> 
-    <dependency>com.atlassian.auiplugin:ajs</dependency>  
+    <dependency>com.atlassian.auiplugin:ajs</dependency>
+    <dependency>com.atlassian.auiplugin:aui-restfultable</dependency>
+    <dependency>com.atlassian.auiplugin:aui-date-picker</dependency>
     <resource type="download" name="report-jira-plugin.css" location="/css/report-jira-plugin.css"/>  
-    <resource type="download" name="report-jira-plugin.js" location="/js/report-jira-plugin.js"/>  
+    <resource type="download" name="report-jira-plugin.js" location="/js/report-jira-plugin.js"/>
+    <resource type="download" name="events-restful-table.js" location="/js/events-restful-table.js"/>
     <resource type="download" name="images/" location="/images"/>  
     <context>report-jira-plugin</context> 
-  </web-resource>  
+  </web-resource>
+
   <webwork1 key="report-webwork-module" name="Report Webwork Module" i18n-name-key="report-webwork-module.name"> 
     <description key="report-webwork-module.description">The Report Webwork Module Plugin</description>  
     <actions> 
@@ -25,16 +31,28 @@
         <view name="report-success">/templates/report-webwork-module/report-success.vm</view> 
       </action> 
     </actions> 
-  </webwork1>  
+  </webwork1>
+
   <web-section key="admin_report_section" name="admin_report_section" location="admin_plugins_menu" weight="20" i18n-name-key="report-plugin.admin.planning.page.web.section.name"> 
     <label key="report-plugin.admin.planning.page.web.section.name"/> 
-  </web-section>  
+  </web-section>
+
   <web-item key="admin_report_webitem" name="admin_report_webitem" section="admin_plugins_menu/admin_report_section" weight="15" i18n-name-key="report-plugin.admin.planning.page.web.item.name"> 
     <label key="report-plugin.admin.planning.page.web.item.name"/>  
     <link linkId="admin_report_webitem_link">/secure/ReportWebworkAction.jspa</link> 
-  </web-item>  
+  </web-item>
+
   <rest name="Report Resources" i18n-name-key="report-jira-plugin.rest.resources.name" key="report-resources" path="/report" version="1.0"> 
     <description key="report-jira-plugin.rest.resources.description">All Report REST Resources</description>  
     <package>com.atlassian.plugins.report.rest</package> 
   </rest>
+
+  <rest name="Events RESTful Table Resource" key="events-restful-table-resource" path="/evt-restful-table" version="1.0">
+    <package>com.atlassian.plugins.report.rest</package>
+  </rest>
+
+
+
+
+
 </atlassian-plugin>
